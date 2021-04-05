@@ -3,20 +3,13 @@ import {
   StyleSheet,
   View,
   Text,
-  Image,
-  TouchableHighlight,
-  TouchableOpacity, 
 } from 'react-native';
 import { useNavigation } from '@react-navigation/core';
 
 import Screen from './Screen.jsx';
 
-export default function Tweet( ) {
-  // const navigation = useNavigation();
-  const tweet = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat mas';
-  const name = 'John Green';
-  const handle = '@johngreen';
-  const time = '10:45pm';
+export default function Tweet({ message, name, handle, time}) {
+
   return (
     <View style={styles.container}>
       <View style={styles.innerContainer}>
@@ -24,9 +17,9 @@ export default function Tweet( ) {
           <View style={styles.info}>
             <View style={styles.userDetails}>
               <Text style={styles.userName}>{name}
-                <Text style={styles.userHandleAndTime}>{handle} · {time}</Text>
+                <Text style={styles.userHandleAndTime}>@{handle} ·  {time}</Text>
               </Text>
-              <Text style={styles.tweetText}>{tweet}</Text>
+              <Text style={styles.tweetText}>{message}</Text>
               <View style={styles.tweetTextContainer}>
               </View>
             </View>
@@ -41,31 +34,19 @@ export default function Tweet( ) {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 0.3,
-    borderBottomColor: 'black',
-    borderBottomWidth: 0.3,
+    flex: 1,
     backgroundColor: 'white',
     marginLeft: 15,
-    
+    justifyContent: 'flex-start',
+    alignItems:'flex-start'
   },
   innerContainer: {
     flex: 1,
-    borderColor: 'green',
     flexDirection: 'row',
-    borderWidth: 0,
     height: 'auto',
     maxHeight: 200,
     maxWidth: 'auto',
-  },
-  info: {
-    flex: 0.77,
-    flexDirection: 'column',
-    borderWidth: 0
-  },
-  userDetails: {
-    flex: 1,
-    borderWidth: 0,
-    marginBottom: 5
+    paddingBottom: 10,
   },
   userName: 
   { color: 'black', 

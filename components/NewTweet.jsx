@@ -5,7 +5,6 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import Separator from './Separator.jsx';
 import firebase from '../database/firebase.js';
-import Tweet from './Tweet.jsx';
 
 
 export default function NewTweet() {
@@ -16,18 +15,21 @@ export default function NewTweet() {
   useEffect(() => {
     const getData = async () => {
       const currentUidRetrieval = await AsyncStorage.getItem('currentUid');
-      console.log(currentUidRetrieval);
       setCurrentUid(currentUidRetrieval);
     };
     getData();
   }, []);
   // on user submisson of new tweet
   const onSubmitHandler =  async () => {
-    firebase.firestore().collection('tweetsBy').doc(currentUid).collection('tweets').doc().set({
-      createdAt: new Date(), 
-      message: newTweet,
-    });
-    setNewTweet('');
+    if (newTweet.length === 0) {
+      console.log('nothing sent');
+    } else {
+      firebase.firestore().collection('tweetsBy').doc(currentUid).collection('tweets').doc().set({
+        createdAt: new Date(), 
+        message: newTweet,
+      });
+      setNewTweet('');
+    }
   };
 
   return (
