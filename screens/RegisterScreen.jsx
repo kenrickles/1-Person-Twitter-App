@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {SafeAreaView, StyleSheet, Image, View, TouchableOpacity, Text, TextInput, ActivityIndicator, Alert } from 'react-native';
+import { StyleSheet, View, TouchableOpacity, Text, TextInput, ActivityIndicator, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import Screen from '../components/Screen.jsx';
@@ -24,6 +24,8 @@ export default function RegisterScreen() {
       Alert.alert('Please fill in details to register');
     } else {
       setIsLoading(true);
+
+      // user creation in firebase
       firebase
         .auth()
         .createUserWithEmailAndPassword(email, password)

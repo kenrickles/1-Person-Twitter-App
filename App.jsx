@@ -6,14 +6,16 @@ import { createStackNavigator } from '@react-navigation/stack';
 import WelcomeScreen from './screens/WelcomeScreen.jsx';
 import LoginScreen from './screens/LoginScreen.jsx';
 import RegisterScreen from './screens/RegisterScreen.jsx';
+import TweetScreen from './screens/TweetScreen.jsx';
+import Tweet from './components/Tweet.jsx';
 
-const Stack = createStackNavigator();
+// const Stack = createStackNavigator();
 
 export default function App() {
   return (
     <>
-      {/* <WelcomeScreen></WelcomeScreen> */}
-      <NavigationContainer>
+      <TweetScreen></TweetScreen>
+      {/* <NavigationContainer>
         <Stack.Navigator initialRouteName="WelcomeScreen" screenOptions={{
           headerShown: false
         }}>
@@ -21,7 +23,7 @@ export default function App() {
           <Stack.Screen name="Login" component={LoginScreen} />
           <Stack.Screen name="Register" component={RegisterScreen} />
         </Stack.Navigator>
-      </NavigationContainer>
+      </NavigationContainer> */}
     </>
   );
 }
