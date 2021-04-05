@@ -18,6 +18,7 @@ export default function NewTweet({ newTweet, setNewTweet }) {
           multiline="true"
           numberOfLines={10}
           style={styles.newTweetText}
+          maxLength={280}
         >
         </TextInput>
       </View>

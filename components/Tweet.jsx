@@ -20,16 +20,14 @@ export default function Tweet( ) {
   return (
     <View style={styles.container}>
       <View style={styles.innerContainer}>
-        <View style={styles.innerContainer}>
-          <View>
-            <View style={styles.info}>
-              <View style={styles.userDetails}>
-                <Text style={styles.userName}>{name}
-                  <Text style={styles.userHandleAndTime}>{handle} · {time}</Text>
-                </Text>
-                <View style={styles.tweetTextContainer}>
-                  <Text style={styles.tweetText}>{tweet}</Text>
-                </View>
+        <View>
+          <View style={styles.info}>
+            <View style={styles.userDetails}>
+              <Text style={styles.userName}>{name}
+                <Text style={styles.userHandleAndTime}>{handle} · {time}</Text>
+              </Text>
+              <View style={styles.tweetTextContainer}>
+                <Text style={styles.tweetText}>{tweet}</Text>
               </View>
             </View>
           </View>
