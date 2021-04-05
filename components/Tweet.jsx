@@ -26,8 +26,8 @@ export default function Tweet( ) {
               <Text style={styles.userName}>{name}
                 <Text style={styles.userHandleAndTime}>{handle} · {time}</Text>
               </Text>
+              <Text style={styles.tweetText}>{tweet}</Text>
               <View style={styles.tweetTextContainer}>
-                <Text style={styles.tweetText}>{tweet}</Text>
               </View>
             </View>
           </View>
@@ -59,7 +59,6 @@ const styles = StyleSheet.create({
   },
   info: {
     flex: 0.77,
-    borderColor: 'yellow',
     flexDirection: 'column',
     borderWidth: 0
   },

@@ -1,11 +1,35 @@
-import React from 'react';
-import { TextInput, View, StyleSheet, Button, Text } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { TextInput, View, StyleSheet, Text } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import Separator from './Separator.jsx';
+import firebase from '../database/firebase.js';
+import Tweet from './Tweet.jsx';
 
-export default function NewTweet({ newTweet, setNewTweet }) {
 
+export default function NewTweet() {
+  // declaration of react state
+  const [newTweet, setNewTweet] = useState('');
+  const [currentUid, setCurrentUid] = useState('');
+
+  useEffect(() => {
+    const getData = async () => {
+      const currentUidRetrieval = await AsyncStorage.getItem('currentUid');
+      console.log(currentUidRetrieval);
+      setCurrentUid(currentUidRetrieval);
+    };
+    getData();
+  }, []);
+  // on user submisson of new tweet
+  const onSubmitHandler = () => {
+    firebase.firestore().collection('tweets').add({
+      belongsTo: currentUid,
+      createdAt: new Date(),
+      message: newTweet,
+    });
+    setNewTweet('');
+  };
 
   return (
     <>
@@ -14,15 +38,18 @@ export default function NewTweet({ newTweet, setNewTweet }) {
         <TextInput 
           placeholder="What's happening? Enter a new tweet.."
           value={newTweet}
-          onChange={setNewTweet}
-          multiline="true"
+          onChangeText={setNewTweet}
+          multiline={true}
           numberOfLines={10}
           style={styles.newTweetText}
           maxLength={280}
         >
         </TextInput>
       </View>
-      <TouchableOpacity style={styles.buttonContainer}>
+      <TouchableOpacity 
+        style={styles.buttonContainer} 
+        onPress={onSubmitHandler}
+      >
         <Text style={styles.buttonText}> Tweet</Text>
       </TouchableOpacity>
       <Separator />

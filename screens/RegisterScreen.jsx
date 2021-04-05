@@ -26,15 +26,17 @@ export default function RegisterScreen() {
     } else {
       setIsLoading(true);
 
-      // user creation in firebase
+      // user creation in firebase authenthication
       firebase
         .auth()
         .createUserWithEmailAndPassword(email, password)
         .then((res) => {
           console.log('inside fb auth');
-          res.user.updateProfile({
-            displayName: name,
+          // after creating firebase auth, create the user in firestore
+          firebase.firestore().collection('users').doc(firebase.auth().currentUser.uid).set({
+            name: name,
             handle: handle,
+            createdAt: new Date(),
           });
           console.log('User registered successfully!');
           setIsLoading(false);

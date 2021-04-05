@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
 import { View, ActivityIndicator, StyleSheet, Alert, Text, TextInput, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import Screen from '../components/Screen.jsx';
 import firebase from '../database/firebase.js';
 
+// store async data
+const storeData = async (uid) => {
+  await AsyncStorage.setItem('currentUid', uid);
 
+};
 
 export default function LoginScreen() {
 
@@ -42,6 +47,8 @@ export default function LoginScreen() {
       // Firebase Auth
       firebase.auth().signInWithEmailAndPassword(email, password).then( (res) => {
         console.log('User logged-in successfully authenticated!');
+        storeData(res.user.uid);
+        navigation.navigate('Home');
       }).catch (error => {
         setIsLoading(false);
         setErrorPresent(true);

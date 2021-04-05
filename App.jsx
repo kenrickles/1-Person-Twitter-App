@@ -9,21 +9,22 @@ import RegisterScreen from './screens/RegisterScreen.jsx';
 import TweetScreen from './screens/TweetScreen.jsx';
 import Tweet from './components/Tweet.jsx';
 
-// const Stack = createStackNavigator();
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
     <>
-      <TweetScreen></TweetScreen>
-      {/* <NavigationContainer>
+      {/* <TweetScreen></TweetScreen> */}
+      <NavigationContainer>
         <Stack.Navigator initialRouteName="WelcomeScreen" screenOptions={{
           headerShown: false
         }}>
           <Stack.Screen name="Welcome" component={WelcomeScreen} />
           <Stack.Screen name="Login" component={LoginScreen} />
           <Stack.Screen name="Register" component={RegisterScreen} />
+          <Stack.Screen name="Home" component={TweetScreen} />
         </Stack.Navigator>
-      </NavigationContainer> */}
+      </NavigationContainer>
     </>
   );
 }

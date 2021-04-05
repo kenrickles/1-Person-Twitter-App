@@ -16,6 +16,7 @@ const styles = StyleSheet.create({
     // Expo constants will allow us to retrieve the status bar height of the type of device. As such, we will use constants.statusBar height for the padding as both iOS and android have different statusBar height
     paddingTop: Constants.statusBarHeight,
     flex: 1,
+    backgroundColor: '#fff'
   },
   view: {
     flex: 1,

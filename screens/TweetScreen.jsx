@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Tweet from '../components/Tweet.jsx';
 import Screen from '../components/Screen.jsx';
@@ -6,13 +6,16 @@ import NewTweet from '../components/NewTweet.jsx';
 import { StyleSheet, Text, View } from 'react-native';
 
 export default function TweetScreen() {
+
   return (
     <Screen>
       <View style={styles.titleContainer}>
         <Text style={styles.title}> Home </Text>
       </View>
-      <NewTweet></NewTweet>
-      <Tweet></Tweet>
+      <NewTweet />
+      <Tweet />
+      <Tweet />
+      
     </Screen>
   );
 }
