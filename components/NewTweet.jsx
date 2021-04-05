@@ -46,13 +46,14 @@ export default function NewTweet() {
           maxLength={280}
         >
         </TextInput>
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity 
+            onPress={onSubmitHandler}
+          >
+            <Text style={styles.buttonText}> Tweet</Text>
+          </TouchableOpacity>
+        </View>
       </View>
-      <TouchableOpacity 
-        style={styles.buttonContainer} 
-        onPress={onSubmitHandler}
-      >
-        <Text style={styles.buttonText}> Tweet</Text>
-      </TouchableOpacity>
       <Separator />
     </>
   );
@@ -75,7 +76,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
     alignSelf: 'flex-end',
     borderWidth: 1,
-    width: 80,
+    width: 70,
     height: 40,
     justifyContent: 'center',
     alignItems: 'center',
