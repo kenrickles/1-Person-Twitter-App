@@ -12,6 +12,7 @@ export default function RegisterScreen() {
   // declaration of react states
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [handle, setHandle] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
@@ -33,6 +34,7 @@ export default function RegisterScreen() {
           console.log('inside fb auth');
           res.user.updateProfile({
             displayName: name,
+            handle: handle,
           });
           console.log('User registered successfully!');
           setIsLoading(false);
@@ -62,6 +64,13 @@ export default function RegisterScreen() {
           placeholder="Name"
           value={name}
           onChangeText={setName}
+        > 
+        </TextInput>
+        <TextInput
+          style={styles.inputText}
+          placeholder="Handle"
+          value={handle}
+          onChangeText={setHandle}
         > 
         </TextInput>
         <TextInput

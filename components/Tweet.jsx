@@ -43,7 +43,7 @@ export default function Tweet( ) {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 0.25,
+    flex: 0.3,
     borderBottomColor: 'black',
     borderBottomWidth: 0.3,
     backgroundColor: 'white',
@@ -53,7 +53,6 @@ const styles = StyleSheet.create({
   innerContainer: {
     flex: 1,
     borderColor: 'green',
-
     flexDirection: 'row',
     borderWidth: 0,
     height: 'auto',
