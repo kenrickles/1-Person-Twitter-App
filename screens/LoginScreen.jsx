@@ -10,7 +10,7 @@ import firebase from '../database/firebase.js';
 
 export default function LoginScreen() {
 
-  // defining navigation 
+  // defining navigation to use react-navigator
   const navigation = useNavigation();
 
   // declaration of state
@@ -101,7 +101,7 @@ export default function LoginScreen() {
 
 const styles = StyleSheet.create({
   LoginScreen:{
-    marginTop: 100,
+    marginTop: 200,
   },
   preloader: {
     left: 0,

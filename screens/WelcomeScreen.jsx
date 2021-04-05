@@ -6,7 +6,8 @@ import Screen from '../components/Screen.jsx';
 import { Text } from 'react-native';
 
 export default function WelcomeScreen() {
-  const navigation = useNavigation(); 
+  // defining navigation to use react-navigator
+  const navigation = useNavigation();
   return (
     <Screen style={styles.WelcomeScreen}>
       <Text style={styles.titleText}> 1-Person Twitter App</Text>
