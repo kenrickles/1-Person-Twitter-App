@@ -27,6 +27,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "Created a twitter for one!",
+    "githubUrl": "https://github.com/kenrickles/1-Person-Twitter-App.git"
   }
 }

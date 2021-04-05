@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { TextInput, View, StyleSheet, Text } from 'react-native';
+import { TextInput, View, StyleSheet, Text, Platform } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -91,6 +91,6 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 15,
     fontWeight: 'bold',
-    fontFamily: 'Helvetica Neue',
+    fontFamily: Platform.OS === 'android' ? 'Roboto' : 'Helvetica Neue',
   },
 });

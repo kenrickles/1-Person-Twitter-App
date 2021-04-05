@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, ActivityIndicator, StyleSheet, Alert, Text, TextInput, TouchableOpacity } from 'react-native';
+import { View, ActivityIndicator, StyleSheet, Alert, Text, TextInput, TouchableOpacity, Platform } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
@@ -66,30 +66,32 @@ export default function LoginScreen() {
     );
   } 
   return (
-    <Screen style={styles.LoginScreen}>
-      {errorPresent && (<Text style={styles.errorMessage}>
-        {errorMessage}
-      </Text>)}
-      <View style={styles.TextInputContainer}>
-        <MaterialCommunityIcons name="email" size={30} color="lightgrey"></MaterialCommunityIcons>
-        <TextInput
-          style={styles.inputText}
-          placeholder="Email"
-          value={email}
-          onChangeText={setEmail}
-        > 
-        </TextInput>
-      </View>
-      <View style={styles.TextInputContainer}>
-        <MaterialCommunityIcons name="lock" size={30} color="lightgrey"></MaterialCommunityIcons>
-        <TextInput
-          style={styles.inputText}
-          placeholder="Password"
-          value={password}
-          onChangeText={setPassword}
-          maxLength={15}
-          secureTextEntry={true}
-        />
+    <Screen>
+      <View style={styles.loginScreenContainer}>
+        {errorPresent && (<Text style={styles.errorMessage}>
+          {errorMessage}
+        </Text>)}
+        <View style={styles.TextInputContainer}>
+          <MaterialCommunityIcons name="email" size={30} color="lightgrey"></MaterialCommunityIcons>
+          <TextInput
+            style={styles.inputText}
+            placeholder="Email"
+            value={email}
+            onChangeText={setEmail}
+          > 
+          </TextInput>
+        </View>
+        <View style={styles.TextInputContainer}>
+          <MaterialCommunityIcons name="lock" size={30} color="lightgrey"></MaterialCommunityIcons>
+          <TextInput
+            style={styles.inputText}
+            placeholder="Password"
+            value={password}
+            onChangeText={setPassword}
+            maxLength={15}
+            secureTextEntry={true}
+          />
+        </View>
       </View>
       <View>
         <TouchableOpacity
@@ -107,9 +109,6 @@ export default function LoginScreen() {
 }
 
 const styles = StyleSheet.create({
-  LoginScreen:{
-    marginTop: 200,
-  },
   preloader: {
     left: 0,
     right: 0,
@@ -124,6 +123,9 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     fontSize: 16,
     color: 'red',
+  },
+  loginScreenContainer:{
+    marginTop: 130,
   },
   TextInputContainer:{
     flexDirection:'row',
@@ -149,7 +151,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   buttonText: {
-    fontFamily: 'Avenir',
+    fontFamily: Platform.OS === 'android' ? 'Roboto' : 'Helvetica Neue',
     fontSize: 18,
     fontWeight: '900',
     fontStyle: 'normal',

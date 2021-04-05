@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, TouchableOpacity, Text, TextInput, ActivityIndicator, Alert } from 'react-native';
+import { StyleSheet, View, TouchableOpacity, Text, TextInput, ActivityIndicator, Alert, Platform } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import Screen from '../components/Screen.jsx';
@@ -116,7 +116,7 @@ export default function RegisterScreen() {
 
 const styles = StyleSheet.create({
   RegisterScreen: {
-    marginTop: 200
+    backgroundColor: '#fff',
   },
   preloader: {
     left: 0,
@@ -130,7 +130,7 @@ const styles = StyleSheet.create({
   },
   TextInputContainer:{
     padding: 10,
-    marginTop: -100,
+    marginTop: 150
   },
   inputText: {
     width: '75%',
@@ -151,7 +151,7 @@ const styles = StyleSheet.create({
     marginTop: 15,
   },
   buttonText: {
-    fontFamily: 'Avenir',
+    fontFamily: Platform.OS === 'android' ? 'Roboto' : 'Helvetica Neue',
     fontSize: 18,
     fontWeight: '900',
     fontStyle: 'normal',
