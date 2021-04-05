@@ -1,12 +1,16 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 
 import Tweet from '../components/Tweet.jsx';
 import Screen from '../components/Screen.jsx';
 import NewTweet from '../components/NewTweet.jsx';
-import { StyleSheet, Text, View } from 'react-native';
+import firebase from '../database/firebase.js';
 
 export default function TweetScreen() {
-
+  useEffect(() => {
+    // firebase.firestore.collection('tweets');
+    
+  }, []);
   return (
     <Screen>
       <View style={styles.titleContainer}>
@@ -15,7 +19,6 @@ export default function TweetScreen() {
       <NewTweet />
       <Tweet />
       <Tweet />
-      
     </Screen>
   );
 }

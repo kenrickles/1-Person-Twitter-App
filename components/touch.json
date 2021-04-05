@@ -1,0 +1,198 @@
+{
+  "_firestore": {
+    "_delegate": {
+      "app": {
+        "name": "[DEFAULT]",
+        "automaticDataCollectionEnabled": false,
+        "options": {
+          "apiKey": "AIzaSyDiKaCjnGRe2HHaw6YImVevNuK1Qjxg-DA",
+          "authDomain": "person-twitterapp.firebaseapp.com",
+          "projectId": "person-twitterapp",
+          "storageBucket": "person-twitterapp.appspot.com",
+          "messagingSenderId": "1018204699435",
+          "appId": "1:1018204699435:web:fecb427874f469e162236e"
+        }
+      },
+      "databaseId": {
+        "projectId": "person-twitterapp",
+        "database": "(default)"
+      },
+      "settings": {
+        "host": "firestore.googleapis.com",
+        "ssl": true,
+        "ignoreUndefinedProperties": false,
+        "cacheSizeBytes": 41943040,
+        "experimentalForceLongPolling": false,
+        "experimentalAutoDetectLongPolling": false
+      }
+    },
+    "Jc": {},
+    "INTERNAL": {},
+    "Yc": {
+      "name": "[DEFAULT]",
+      "automaticDataCollectionEnabled": false,
+      "options": {
+        "apiKey": "AIzaSyDiKaCjnGRe2HHaw6YImVevNuK1Qjxg-DA",
+        "authDomain": "person-twitterapp.firebaseapp.com",
+        "projectId": "person-twitterapp",
+        "storageBucket": "person-twitterapp.appspot.com",
+        "messagingSenderId": "1018204699435",
+        "appId": "1:1018204699435:web:fecb427874f469e162236e"
+      }
+    }
+  },
+  "_delegate": {
+    "_firestore": {
+      "app": {
+        "name": "[DEFAULT]",
+        "automaticDataCollectionEnabled": false,
+        "options": {
+          "apiKey": "AIzaSyDiKaCjnGRe2HHaw6YImVevNuK1Qjxg-DA",
+          "authDomain": "person-twitterapp.firebaseapp.com",
+          "projectId": "person-twitterapp",
+          "storageBucket": "person-twitterapp.appspot.com",
+          "messagingSenderId": "1018204699435",
+          "appId": "1:1018204699435:web:fecb427874f469e162236e"
+        }
+      },
+      "databaseId": {
+        "projectId": "person-twitterapp",
+        "database": "(default)"
+      },
+      "settings": {
+        "host": "firestore.googleapis.com",
+        "ssl": true,
+        "ignoreUndefinedProperties": false,
+        "cacheSizeBytes": 41943040,
+        "experimentalForceLongPolling": false,
+        "experimentalAutoDetectLongPolling": false
+      }
+    },
+    "_userDataWriter": {
+      "firestore": {
+        "_delegate": {
+          "app": {
+            "name": "[DEFAULT]",
+            "automaticDataCollectionEnabled": false,
+            "options": {
+              "apiKey": "AIzaSyDiKaCjnGRe2HHaw6YImVevNuK1Qjxg-DA",
+              "authDomain": "person-twitterapp.firebaseapp.com",
+              "projectId": "person-twitterapp",
+              "storageBucket": "person-twitterapp.appspot.com",
+              "messagingSenderId": "1018204699435",
+              "appId": "1:1018204699435:web:fecb427874f469e162236e"
+            }
+          },
+          "databaseId": {
+            "projectId": "person-twitterapp",
+            "database": "(default)"
+          },
+          "settings": {
+            "host": "firestore.googleapis.com",
+            "ssl": true,
+            "ignoreUndefinedProperties": false,
+            "cacheSizeBytes": 41943040,
+            "experimentalForceLongPolling": false,
+            "experimentalAutoDetectLongPolling": false
+          }
+        },
+        "Jc": {},
+        "INTERNAL": {},
+        "Yc": {
+          "name": "[DEFAULT]",
+          "automaticDataCollectionEnabled": false,
+          "options": {
+            "apiKey": "AIzaSyDiKaCjnGRe2HHaw6YImVevNuK1Qjxg-DA",
+            "authDomain": "person-twitterapp.firebaseapp.com",
+            "projectId": "person-twitterapp",
+            "storageBucket": "person-twitterapp.appspot.com",
+            "messagingSenderId": "1018204699435",
+            "appId": "1:1018204699435:web:fecb427874f469e162236e"
+          }
+        }
+      }
+    },
+    "_key": {
+      "path": {
+        "segments": ["tweets", "qbDvMH5eHKbO7l5uKCdYsLcb6ag2"],
+        "offset": 0,
+        "len": 2
+      }
+    },
+    "_document": {
+      "key": {
+        "path": {
+          "segments": [
+            "projects",
+            "person-twitterapp",
+            "databases",
+            "(default)",
+            "documents",
+            "tweets",
+            "qbDvMH5eHKbO7l5uKCdYsLcb6ag2"
+          ],
+          "offset": 5,
+          "len": 2
+        }
+      },
+      "documentType": 1,
+      "version": {
+        "timestamp": { "seconds": 1617623377, "nanoseconds": 570133000 }
+      },
+      "data": {
+        "overlayMap": {},
+        "partialValue": {
+          "mapValue": {
+            "fields": {
+              "messages": {
+                "arrayValue": {
+                  "values": [
+                    {
+                      "mapValue": {
+                        "fields": {
+                          "createdAt": {
+                            "timestampValue": "2021-04-05T11:49:37.412Z"
+                          },
+                          "message": { "stringValue": "hello world" }
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "documentState": 0
+    },
+    "_converter": null,
+    "_firestoreImpl": {
+      "app": {
+        "name": "[DEFAULT]",
+        "automaticDataCollectionEnabled": false,
+        "options": {
+          "apiKey": "AIzaSyDiKaCjnGRe2HHaw6YImVevNuK1Qjxg-DA",
+          "authDomain": "person-twitterapp.firebaseapp.com",
+          "projectId": "person-twitterapp",
+          "storageBucket": "person-twitterapp.appspot.com",
+          "messagingSenderId": "1018204699435",
+          "appId": "1:1018204699435:web:fecb427874f469e162236e"
+        }
+      },
+      "databaseId": {
+        "projectId": "person-twitterapp",
+        "database": "(default)"
+      },
+      "settings": {
+        "host": "firestore.googleapis.com",
+        "ssl": true,
+        "ignoreUndefinedProperties": false,
+        "cacheSizeBytes": 41943040,
+        "experimentalForceLongPolling": false,
+        "experimentalAutoDetectLongPolling": false
+      }
+    },
+    "metadata": { "hasPendingWrites": false, "fromCache": false }
+  }
+}

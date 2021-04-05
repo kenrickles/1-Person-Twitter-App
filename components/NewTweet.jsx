@@ -22,10 +22,9 @@ export default function NewTweet() {
     getData();
   }, []);
   // on user submisson of new tweet
-  const onSubmitHandler = () => {
-    firebase.firestore().collection('tweets').add({
-      belongsTo: currentUid,
-      createdAt: new Date(),
+  const onSubmitHandler =  async () => {
+    firebase.firestore().collection('tweetsBy').doc(currentUid).collection('tweets').doc().set({
+      createdAt: new Date(), 
       message: newTweet,
     });
     setNewTweet('');

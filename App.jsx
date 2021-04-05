@@ -14,7 +14,6 @@ const Stack = createStackNavigator();
 export default function App() {
   return (
     <>
-      {/* <TweetScreen></TweetScreen> */}
       <NavigationContainer>
         <Stack.Navigator initialRouteName="WelcomeScreen" screenOptions={{
           headerShown: false
