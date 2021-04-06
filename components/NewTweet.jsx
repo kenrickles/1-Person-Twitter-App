@@ -12,6 +12,7 @@ export default function NewTweet() {
   const [newTweet, setNewTweet] = useState('');
   const [currentUid, setCurrentUid] = useState('');
 
+  // useEffect to return current Uid from local storage
   useEffect(() => {
     const getData = async () => {
       const currentUidRetrieval = await AsyncStorage.getItem('currentUid');
@@ -21,13 +22,16 @@ export default function NewTweet() {
   }, []);
   // on user submisson of new tweet
   const onSubmitHandler =  async () => {
+    // prevents user from sending blank tweets
     if (newTweet.length === 0) {
       console.log('nothing sent');
     } else {
+      // firebase request to firestore to store a new tweet and having a uniquely generated firestore key for the document name
       firebase.firestore().collection('tweetsBy').doc(currentUid).collection('tweets').doc().set({
         createdAt: new Date(), 
         message: newTweet,
       });
+      // reset the new tweet input
       setNewTweet('');
     }
   };

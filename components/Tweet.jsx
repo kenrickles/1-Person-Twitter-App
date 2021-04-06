@@ -1,13 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   StyleSheet,
   View,
   Text,
 } from 'react-native';
-import { useNavigation } from '@react-navigation/core';
 
-import Screen from './Screen.jsx';
-
+// Handles the display of an individual tweet that would be reused depending on the size of the array
 export default function Tweet({ message, name, handle, time}) {
 
   return (

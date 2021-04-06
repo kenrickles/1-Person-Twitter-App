@@ -1,5 +1,7 @@
 import * as firebase from 'firebase';
 
+// Fire base configurations for firestore and firebase auth
+
 var firebaseConfig = {
   apiKey: 'AIzaSyDiKaCjnGRe2HHaw6YImVevNuK1Qjxg-DA',
   authDomain: 'person-twitterapp.firebaseapp.com',

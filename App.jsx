@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -7,8 +7,9 @@ import WelcomeScreen from './screens/WelcomeScreen.jsx';
 import LoginScreen from './screens/LoginScreen.jsx';
 import RegisterScreen from './screens/RegisterScreen.jsx';
 import TweetScreen from './screens/TweetScreen.jsx';
-import Tweet from './components/Tweet.jsx';
 
+
+// variable to use StackNavigation
 const Stack = createStackNavigator();
 
 export default function App() {

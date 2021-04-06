@@ -17,24 +17,29 @@ export default function TweetScreen() {
   const [tweets, setTweets] = useState('');
   const [isLoading, setIsLoading] = useState(true);
 
+  // use effect to run whenever the tweet screen loads to display the user's tweet.
   useEffect(() => {
+
     const getTweetData = async () => {
+      // retrieval of Uid from localStorage
       const currentUidRetrieval = await AsyncStorage.getItem('currentUid');
+      // setting the state of the currentUid from localStorage
       setCurrentUid(currentUidRetrieval);
+      // request to firebase to retrieve the user Information
       const userRef = firebase.firestore().collection('users').doc(currentUidRetrieval);
       const userHandleRetrieval = await userRef.get();
+      // if the user exists, we will take the handle and the display name and set it to the respective states
       if(userHandleRetrieval.exists){
-        console.log(userHandleRetrieval.data().handle);
         setName(userHandleRetrieval.data().name);
         setHandle(userHandleRetrieval.data().handle);
       }
+      // firebase request to return the collection of tweets by the user
       firebase.firestore().collection('tweetsBy').doc(currentUidRetrieval).collection('tweets').onSnapshot(docSnapshot => {
         const tweetsArray = [];
         docSnapshot.forEach((doc) => {
           tweetsArray.push(doc.data());
-          // console.log(doc.id, doc.data());
-          // console.log(doc.data().createdAt.toDate());
         });
+        // function to sort the tweetsArray and return it by most recent
         function DateComparator(dateAPair, dateBPair) {
 
           var DateA = new Date(dateAPair.createdAt.toDate());
@@ -50,13 +55,13 @@ export default function TweetScreen() {
         tweetsArray.sort(DateComparator);
         setTweets(tweetsArray);
         setIsLoading(false);
-        console.log(tweets);
       });
     };
     getTweetData();
     
   }, []);
 
+  // loading spinner when request is made to firebase, so users will get feedback when they enter the Homepage
   if(isLoading){
     return(
       <View style={styles.preloader}>
